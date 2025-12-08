@@ -92,7 +92,7 @@ const TechInfo = ({setOpen, openPopup}) => {
         Api.get("/home/initTech")
             .then((res) => setTechValue(res.data))
             .catch((err)=> console.log(err));
-    })
+    },[]);
     const testValue = [
         { type : "backend", isImg : true, img : "/images/spring-icon.png", title : "Spring Boot" },
         { type : "backend", isImg : true, img : "/images/spring-icon.png", title : "Spring Framework" },

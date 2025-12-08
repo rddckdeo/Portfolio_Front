@@ -332,7 +332,7 @@ const SetProjectList = () => {
         // Api.get("/home/getProject")
         //     .then((res) => console.log(res.data))
         //     .catch((err) => console.log(err));
-    })
+    },[]);
     return(
         <div className="width100 height100 flexColumn">
             <div className={styles.gridContainer}>
