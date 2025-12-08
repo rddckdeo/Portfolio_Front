@@ -206,13 +206,6 @@ const SiteInfo = ({setOpen, openPopup}) => {
             .catch((err) => console.log(err));
     }, []);
 
-    const testValue = [
-        { title: "프로젝트A", image: "/images/project1.png", mdFile: "/md/projectA.md" },
-        { title: "프로젝트B", image: "/images/project1.png", mdFile: "/md/projectB.md" },
-        { title: "프로젝트C", image: "/images/project1.png", mdFile: "/md/projectC.md" },
-        { title: "[Final Project] CoCo", image: "/images/project2.png", mdFile: "/md/finalProject.md" },
-        { title: "[Semi Project] 여기어때", image: "/images/project1.png", mdFile: "/md/semiProject.md" }
-    ];
     return(
         <div className={styles.card}>
             <p className={styles.cardTitle}>Project</p>
