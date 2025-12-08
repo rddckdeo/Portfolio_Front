@@ -1,0 +1,31 @@
+markdown을 불러오는 순서 및 각 코드의 역할
+
+1. 마크다운을 불러오는 전체 흐름 요약
+    컴포넌트 렌더링
+    ↓
+    부모에서 md 파일 경로 전달 (mdFile)
+    ↓
+    useEffect 실행 (mdFile 감지)
+    ↓
+    fetch로 md 파일 다운로드
+    ↓
+    텍스트로 변환 (.text())
+    ↓
+    setContent로 상태 저장
+    ↓
+    <ReactMarkdown>이 content를 HTML로 렌더링
+    ↓
+    화면에 마크다운 표시
+
+2. 각 코드의 역할
+- ReactMarkdown
+    역할 : 마크다운 문법을 HTML로 변환해서 화면에 렌더링
+    입력 : 마크다운 문자열
+    출력 : HTML 태그로 변환된 React 엘리먼트
+
+- remarkGfm
+    역할 : GitHub 스타일 마크다운(GFM) 기능 지원
+    지원 사례 : 체크박스 리스트, 표, 취소선, 칭크 자동 연결 등
+
+- rehypeRaw
+    역할 : 마크다운 안에 포함된 HTML 태그를 실제 HTML로 해석

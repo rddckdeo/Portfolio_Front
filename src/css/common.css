@@ -1,0 +1,138 @@
+/* ===== 기본 Width / Height ===== */
+.width100 { width: 100%; }
+.height100 { height: 100%; }
+
+.minHeight400{
+    min-height: 400px;
+}
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ===== Flex 공용 ===== */
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.justifyCenter {
+    display: flex;
+    justify-content: center;
+}
+.justifyStart{
+    display: flex;
+    justify-content: flex-start;
+}
+.justifyEnd{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alignCenter {
+    display: flex;
+    align-items: center;
+}
+
+.centerBoth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spaceAround {
+    display: flex;
+    justify-content: space-around;
+}
+.spaceEvenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* ===== Text 공용 ===== */
+.textCenter { text-align: center; }
+.bold { font-weight: 700; }
+.semibold { font-weight: 600; }
+.fontSize20{ font-size: 20px; }
+.fontSize18{ font-size: 18px; }
+
+.fontJalnan{
+    font-family: 'Jalnan2';
+}
+/* ===== Margin / Padding ===== */
+.mt10 { margin-top: 10px; }
+.mt20 { margin-top: 20px; }
+.mt30 { margin-top: 30px; }
+.mt40 { margin-top: 40px; }
+.mt50 { margin-top: 50px; }
+
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+.mb30 { margin-bottom: 30px; }
+.mb40 { margin-bottom: 40px; }
+.mb50 { margin-bottom: 50px; }
+
+.ml10 { margin-left: 10px; }
+.ml20 { margin-left: 20px; }
+.ml30 { margin-left: 30px; }
+.ml40 { margin-left: 40px; }
+.ml50 { margin-left: 50px; }
+
+.mr10 { margin-right: 10px; }
+.mr20 { margin-right: 20px; }
+.mr30 { margin-right: 30px; }
+.mr40 { margin-right: 40px; }
+.mr50 { margin-right: 50px; }
+
+.p10 { padding: 10px; }
+.p20 { padding: 20px; }
+
+.gap10 { display: flex; gap: 10px;}
+/* ===== position ===== */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.L0{ left: 0; }
+.R0{ right: 0; }
+/* ===== Misc ===== */
+.cursorPointer { cursor: pointer; }
+.hidden { display: none; }
+.borderBox { box-sizing: border-box; }
+.borderX{ border: 1px solid #2c2c2c; }
+.borderDefault{ border: 1px solid #ddd; }
+.overflowAuto { overflow: auto; }
+
+/* ===== Buttons ===== */
+.btnDefault {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+}
+.btnBlue {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #3b82f6;
+    color: white;
+}
+.btnGreen {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #10b981;
+    color: white;
+}

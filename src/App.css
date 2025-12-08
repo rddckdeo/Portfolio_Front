@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+.App{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 2000px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* **************************************** */
+/* Header */
+.Header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    font-family: 'Jalnan2';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 로고 */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Jalnan2';
+    font-size: 22px;
+    font-weight: 600;
+    color: #0F3D73;
+    cursor: pointer;
+    transition: transform .2s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo:hover {
+    transform: scale(1.03);
 }
 
-.App-link {
-  color: #61dafb;
+/* Logout */
+.logoutBtn {
+    font-family: 'Jalnan2';
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    background: #1F4B99;
+    color: white;
+    cursor: pointer;
+    transition: all .25s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logoutBtn:hover {
+    background: #123776;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+/* 설정 버튼 */
+.configBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .25s ease;
+    color: #0F3D73;
+    font-weight: 500;
+}
+
+.configBtn:hover {
+    background: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+}
+
+.headerIcon {
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+/* **************************************** */
+/* Sidebar */
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 12px;
+    z-index: 999;
+}
+
+/* 기본 버튼 스타일 */
+.menuItem {
+    --size: 52px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(200,200,200,0.35);
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: width .32s cubic-bezier(.2,.9,.3,1), box-shadow .25s, transform .18s;
+    align-self: flex-start; /* 왼쪽 정렬로 확장 시 자연스럽게 보이게 */
+}
+
+/* 이모지 (아이콘) */
+.menuItem .emoji {
+    font-size: 20px; /* 이모지 크기 조절 */
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* 텍스트 라벨(초기엔 숨김) */
+.menuItem .label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2b3a67;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity .28s ease, transform .28s cubic-bezier(.2,.9,.3,1);
+    pointer-events: none;
+}
+
+/* hover or focus 시 확장 */
+.menuItem:hover,
+.menuItem:focus {
+    width: 160px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+    transform: translateX(0);
+    border-color: rgba(138,184,255,0.9);
+}
+
+/* hover 시 라벨 등장 */
+.menuItem:hover .label,
+.menuItem:focus .label {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* 포커스 스타일 (접근성) */
+.menuItem:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(138,184,255,0.18);
+}
+
+/* 활성 메뉴 강조 (선택 시 .active 추가 가능) */
+.menuItem.active {
+    background: linear-gradient(90deg, #f7fbff, #ffffff);
+    border-color: #8AB8FF;
+    box-shadow: 0 18px 36px rgba(138,184,255,0.12);
+}
+
+/* 반응형: 작게 줄일 때 */
+@media (max-width: 720px) {
+    .Sidebar {
+        left: 10px;
+    }
+    .menuItem {
+        --size: 44px;
+    }
+    .menuItem:hover,
+    .menuItem:focus {
+        width: 140px;
+    }
+    .menuItem .emoji { font-size: 18px; }
+    .menuItem .label { font-size: 13px; }
+}
+/* ***************************** */
+/* popup */
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 999;
+}
+.popup{
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.popupHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.popupContent {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 120px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: auto;
+    overflow-y: auto;
+
+}
+.popupClose{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+    font-weight: bold;
+}
+.popupTitle{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ddd;
 }

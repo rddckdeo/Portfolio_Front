@@ -1,0 +1,279 @@
+/* common */
+.container {
+    width: 100%;
+    height: 95vh; /* Header 제외한 영역 */
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 80%;
+    height: 100%;
+}
+/* ***************************************************** */
+/* login Components */
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* 부모 height를 기준으로 */
+    background-color: #f5f5f5; 
+}
+
+
+.loginContent input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.loginContent input:focus {
+    border-color: #007bff;
+}
+
+.loginContent button {
+    width: 100px;
+    padding: 8px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.loginContent button:hover {
+    background-color: #0056b3;
+}
+
+/* ************************************************ */
+.settingContent{
+    width: 90%;
+    height: 90%;
+    border-radius: 18px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.settingSidebar{
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    height: 100%;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+.setItem{
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+.setItem::before{
+    content: "•";
+    color: red;
+}
+.setItem2{
+    margin-left: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.setItem2::before{
+    content: "└";
+    color: red;
+
+}
+
+.setContent{
+    width: 100%;
+}
+
+/* ************************************************ */
+/* SetHome */
+.homeCard{
+    width: 50%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    padding: 10px;
+}
+/* 버튼 */
+.btnDefault {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+}
+.btnBlue {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #3b82f6;
+    color: white;
+}
+.btnGreen {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #10b981;
+    color: white;
+}
+
+/* 테이블 스타일 */
+.tableContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.tableHeader,
+.tableRow {
+    display: grid;
+    grid-template-columns: 5% 20% 30% 10% 15% 15% 5%;
+    border-bottom: 1px solid #ddd;
+    padding: 6px 4px;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+}
+.tableHeader {
+    background: #fafafa;
+    font-weight: 600;
+}
+
+/* 프로필 정보 */
+.profileInfoBox div {
+    padding: 6px 0;
+}
+.profileInfoBox span {
+    font-weight: 600;
+}
+/* *************** 캐러셀 추가 스타일 (styles.module.css) *************** */
+/* *************** 캐러셀 (중앙에 겹치는 스타일) *************** */
+.carouselContainer {
+    position: relative;
+    height: 250px;
+    margin: 0 auto 20px auto;
+}
+
+/* 중앙 이미지 */
+.carouselImageCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 14px rgba(0,0,0,0.25);
+    z-index: 3;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.carouselImageCenter:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* 왼쪽 이미지 */
+.carouselImageLeft {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -50%); /* 왼쪽으로 이동 + 반쯤 겹침 */
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0.65;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 2;
+}
+.carouselImageLeft:hover {
+    opacity: 0.9;
+    transform: translate(-90%, -50%) scale(1.05);
+}
+
+/* 오른쪽 이미지 */
+.carouselImageRight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%); /* 오른쪽으로 이동 + 반쯤 겹침 */
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0.65;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 2;
+}
+.carouselImageRight:hover {
+    opacity: 0.9;
+    transform: translate(-10%, -50%) scale(1.05);
+}
+
+
+/* ************************************************** */
+/* ************************************************** */
+/* ************************************************** */
+/* project Add */
+.projectAddContainer {
+    padding: 10px;
+}
+.leftArea {
+    width: 320px;
+    gap: 8px;
+    font-size: 14px;
+    color: #777;
+}
+.rightArea {
+    flex: 1;
+}
+.projectImgBox {
+    width: 270px;
+    height: 270px;
+    border-radius: 18px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+    overflow: hidden;
+}
+.projectPreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.noImageText {
+    color: #999;
+    font-size: 14px;
+}
+.mdEditorBox {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    padding: 12px;
+    font-size: 14px;
+    color: #777;
+}

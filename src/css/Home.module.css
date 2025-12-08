@@ -1,0 +1,289 @@
+/* common */
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 80%;
+    height: 100%;
+}
+
+.card{
+    width: 100%;
+    padding: 15px;
+    margin: 15px;
+}
+.cardTitle{
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+/* **************************************** */
+/* profileInfo */
+.profile{
+    width: 150px;
+    height: 200px;
+}
+
+.profileImg{
+    object-fit: cover;
+    height: 250px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+/* 프로필 정보 */
+.profileInfoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 360px;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.infoLabel {
+    font-weight: 600;
+    color: #3b3b3b;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.infoValue {
+    flex: 1;
+    color: #444;
+}
+
+.introBox {
+    margin-top: 18px;
+    padding: 20px 10px !important;
+    background: #fafafa;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b4b4b;
+    border: 1px solid #ececec;
+}
+
+.profileInfoBox div {
+    padding: 6px 0;
+}
+.profileInfoBox span {
+    font-weight: 600;
+}
+.infoIcon{
+    height: 20px;
+}
+/* **************************************** */
+/* techInfo */
+.techItem{
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    background: #ffffff;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+.techIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 6px;
+    display: flex;
+}
+/* **************************************** */
+/* siteInfo */
+.gridContainer{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+.gridCard{
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.gridCard img{
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+
+/* ************************************************** */
+/* 캐러셀 스타일 */
+.carouselBackContainer{
+    height: 100%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    background: #fafafa;
+    border-radius: 18px;
+    margin-right: 20px;
+}
+.carouselContainer {
+    position: relative;
+    width: 600px; /* 이미지가 겹쳐도 충분히 보일 정도 */
+    height: 400px;
+    margin: 0 auto 20px auto;
+}
+
+/* 중앙 이미지 */
+.carouselImageCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 14px rgba(0,0,0,0.25);
+    z-index: 3;
+    cursor: pointer;
+
+    transition: transform .25s ease;
+    transform-origin: center;
+}
+.carouselImageCenter:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* 왼쪽 이미지 */
+.carouselImageLeft {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-90%, -50%); /* 왼쪽으로 이동 + 반쯤 겹침 */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0.65;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 2;
+}
+.carouselImageLeft:hover {
+    opacity: 0.9;
+    transform: translate(-90%, -50%) rotate(-8deg);
+}
+
+/* 오른쪽 이미지 */
+.carouselImageRight {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-10%, -50%); /* 오른쪽으로 이동 + 반쯤 겹침 */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0.65;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 2;
+}
+.carouselImageRight:hover {
+    opacity: 0.9;
+    transform: translate(-10%, -50%) rotate(8deg);
+}
+
+
+/* ************************************************** */
+/* Project */
+.projectHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLeft {
+    font-size: 14px;
+    color: #7a7a7a;
+    font-weight: 500;
+}
+
+.headerTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+.headerRight {
+    font-size: 14px;
+    color: #7a7a7a;
+    font-weight: 500;
+}
+
+/* 슬라이드 진행 바 */
+.progressBar {
+    width: 100%;
+    height: 4px;
+    background: #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #4C84FF, #8AB8FF);
+    transition: width 0.6s ease-in-out;
+}
+.arrowBtn {
+    background: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.arrowBtn:hover {
+    opacity: 0.6;
+}
+.projectContent {
+    width: 100%;
+    height: 500px;
+    overflow: hidden; /* 슬라이더 핵심 */
+    position: relative;
+}
+.projectImg {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;       /* 💥 이미지가 절대 줄어들지 않게 */
+    border-radius: 12px;
+}
+.sliderWrapper {
+    width: 100%;          /* 💥 이거 필수 */
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;       /* 💥 flex 줄어듦 방지 */
+    transition: transform 0.6s ease-in-out;
+}
