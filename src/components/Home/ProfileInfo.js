@@ -93,19 +93,6 @@ const TechInfo = ({setOpen, openPopup}) => {
             .then((res) => setTechValue(res.data))
             .catch((err)=> console.log(err));
     },[]);
-    const testValue = [
-        { type : "backend", isImg : true, img : "/images/spring-icon.png", title : "Spring Boot" },
-        { type : "backend", isImg : true, img : "/images/spring-icon.png", title : "Spring Framework" },
-        { type : "backend", isImg : false, img : "", title : "Java" },
-        { type : "frontend", isImg : false, img : "", title : "React" },
-        { type : "frontend", isImg : false, img : "", title : "JSP" },
-        { type : "frontend", isImg : false, img : "", title : "HTML" },
-        { type : "frontend", isImg : false, img : "", title : "CSS" },
-        { type : "frontend", isImg : false, img : "", title : "Java Script" },
-        { type : "DataBase", isImg : false, img : "", title : "MySQL" },
-        { type : "DataBase", isImg : false, img : "", title : "Oracle" },
-        { type : "etc", isImg : false, img : "", title : "GitHub" }
-    ]
     return(
         <div className={styles.card}>
             <p className={styles.cardTitle}>Tech Stack</p>
